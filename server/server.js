@@ -1,14 +1,18 @@
 require('dotenv').config()
 
 const express = require("express");
+const morgan = require("morgan");
 
 const app = express();
 
+app.use(morgan("tiny"));
+
 //passed in next argument to get access to the next function, the next function tells our request to send to the next middleware or to the final route
-app.use((req, res, next) => {
-    console.log("middleware setup");
-    next();
-});
+//Previously was middleware (not yet install morgan)
+// app.use((req, res, next) => {
+//     console.log("middleware setup");
+//     next();
+// });
 
 // Get all restaurants
 app.get("/api/v1/restaurants", (req, res) => {

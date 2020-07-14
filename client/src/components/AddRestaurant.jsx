@@ -34,7 +34,7 @@ const AddRestaurant = () => {
                     <div className="col">
                         <input 
                         value={name} 
-                        onChange={e => setName(e.target.value)} 
+                        onChange={(e) => setName(e.target.value)} 
                         type="text" 
                         className="form-control" 
                         placeholder="Restaurant name"/>
@@ -42,7 +42,7 @@ const AddRestaurant = () => {
                     <div className="col">
                         <select  
                         value={location} 
-                        onChange={e => setLocation(e.target.value)} 
+                        onChange={(e) => setLocation(e.target.value)} 
                         className="custom-select my-1 mr-sm-2">
                             <option disabled>Location</option>
                             <option value="Central">Central</option>
@@ -55,7 +55,7 @@ const AddRestaurant = () => {
                     <div className="col">
                         <input  
                         value={cuisine} 
-                        onChange={e => setCuisine(e.target.value)} 
+                        onChange={(e) => setCuisine(e.target.value)} 
                         type="text" 
                         className="form-control" 
                         placeholder="Cuisine"/>
@@ -63,7 +63,7 @@ const AddRestaurant = () => {
                     <div className="col">
                         <input  
                         value={address} 
-                        onChange={e => setAddress(e.target.value)} 
+                        onChange={(e) => setAddress(e.target.value)} 
                         type="text" 
                         className="form-control" 
                         placeholder="Address"/>

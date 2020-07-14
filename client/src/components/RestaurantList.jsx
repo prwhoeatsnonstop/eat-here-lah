@@ -1,12 +1,16 @@
 import React, {useEffect, useContext} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
+import { useHistory } from "react-router-dom";
 
 
 
 //passing an empty array will help to ensure useEffect will only run when component mounts and not everytime when a component reloads
 const RestaurantList = (props) => {
     const { restaurants, setRestaurants } = useContext(RestaurantsContext);
+
+    let history = useHistory();
+
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -19,6 +23,28 @@ const RestaurantList = (props) => {
   
       fetchData();
     }, []);
+
+    const handleDelete = async (e, id) => {
+        e.stopPropagation();
+        try {
+            const response = await RestaurantFinder.delete(`/${id}`);
+            setRestaurants(restaurants.filter(restaurant => {
+                return restaurant.id !== id;
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+
+    const handleUpdate = (e, id) => {
+        e.stopPropagation();
+        history.push(`/restaurants/${id}/update`)
+    };
+
+    const handleRestaurantSelect = (id) => {
+        history.push(`/restaurants/${id}`)
+    }
 
     return (
         <div className="list-group">
@@ -36,24 +62,30 @@ const RestaurantList = (props) => {
                 <tbody>
                     {restaurants && restaurants.map(restaurant => {
                         return(
-                                <tr key={restaurant.id}>
+                                <tr onClick={() => handleRestaurantSelect(restaurant.id)} key={restaurant.id}>
                                     <td>{restaurant.name}</td>
                                     <td>{restaurant.location}</td>
                                     <td>{restaurant.cuisine}</td>
                                     <td>{restaurant.address}</td>
-                                    <td><button className="btn btn-warning">Update</button></td>
-                                    <td><button className="btn btn-danger">Delete</button></td>
+                                    <td>
+                                        <button
+                                            onClick={(e) => handleUpdate(e, restaurant.id)}
+                                            className="btn btn-warning"
+                                        >
+                                            Update
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button 
+                                            onClick={(e) => handleDelete(e, restaurant.id)} 
+                                            className="btn btn-danger"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
                                 </tr>
                         )
                     })}
-                    {/* <tr>
-                        <td>mcd</td>
-                        <td>central</td>
-                        <td>fast food</td>
-                        <td>mcd</td>
-                        <td><button className="btn btn-warning">Update</button></td>
-                        <td><button className="btn btn-danger">Delete</button></td>
-                    </tr> */}
                 </tbody>
             </table>
         </div>

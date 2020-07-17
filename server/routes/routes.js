@@ -46,8 +46,8 @@ routes.post("/api/v1/restaurants", async (req, res) => {
     console.log(req.body);
 
     try {
-        const results = await db.query("INSERT INTO restaurants (name, location, cuisine, address) values ($1, $2, $3, $4) returning *", 
-        [req.body.name, req.body.location, req.body.cuisine, req.body.address]);
+        const results = await db.query("INSERT INTO restaurants (name, cuisine, address) values ($1, $2, $3) returning *", 
+        [req.body.name, req.body.cuisine, req.body.address]);
         console.log(results);
         res.status(201).json({
             status: "success",
@@ -63,8 +63,8 @@ routes.post("/api/v1/restaurants", async (req, res) => {
 // Update a restaurant
 routes.put("/api/v1/restaurants/:id", async (req, res) => {
     try {
-        const results = await db.query("UPDATE restaurants SET name = $1, location = $2, cuisine = $3, address = $4 WHERE id = $5 returning *", 
-        [req.body.name, req.body.location, req.body.cuisine, req.body.address, req.params.id]);
+        const results = await db.query("UPDATE restaurants SET name = $1, cuisine = $2, address = $3 WHERE id = $4 returning *", 
+        [req.body.name, req.body.cuisine, req.body.address, req.params.id]);
         
         res.status(200).json({
             status: "success",

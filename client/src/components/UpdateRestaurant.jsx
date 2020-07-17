@@ -2,7 +2,8 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { RestaurantsContext } from '../context/RestaurantsContext';
 import RestaurantFinder from '../apis/RestaurantFinder';
-import { Button } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
+
 
 const UpdateRestaurant = (props) => {
     const { id } = useParams();
@@ -12,7 +13,6 @@ const UpdateRestaurant = (props) => {
     const { restaurants } = useContext(RestaurantsContext);
 
     const [name, setName] = useState("");
-    const [location, setLocation] = useState("");
     const [cuisine, setCuisine] = useState("");
     const [address, setAddress] = useState("");
 
@@ -21,7 +21,6 @@ const UpdateRestaurant = (props) => {
             const response = await RestaurantFinder.get(`/${id}`);
             console.log(response.data.data);
             setName(response.data.data.restaurant.name)
-            setLocation(response.data.data.restaurant.location)
             setCuisine(response.data.data.restaurant.cuisine)
             setAddress(response.data.data.restaurant.address)
         };
@@ -33,7 +32,6 @@ const UpdateRestaurant = (props) => {
         e.preventDefault();
         const updatedRestaurant = await RestaurantFinder.put(`${id}`, {
             name,
-            location,
             cuisine,
             address
         });
@@ -41,59 +39,32 @@ const UpdateRestaurant = (props) => {
     };
 
     return (
-        <div>
-            <form action="">
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input 
-                        value={name} 
-                        onChange={(e) => setName(e.target.value)} 
-                        id="name" 
-                        className="form-control" 
-                        type="text"
-                    />
-                </div>
+        
+        <Form>
+        <Form.Group widths='equal'>
 
-                <div>
-                    <select 
-                        value={location} 
-                        onChange={(e) => setLocation(e.target.value)} 
-                        className="custom-select my-1 mr-sm-2"
-                    >
-                        <option disabled>Location</option>
-                        <option value="Central">Central</option>
-                        <option value="North">North</option>
-                        <option value="South">South</option>
-                        <option value="East">East</option>
-                        <option value="West">West</option>
-                    </select>
-                </div>
+            <Form.Input 
+                fluid label="Name" 
+                onChange={(e) => setName(e.target.value)} 
+                value={name}
+            />
 
-                <div className="form-group">
-                    <label htmlFor="cuisine">Cuisine</label>
-                    <input 
-                        value={cuisine} 
-                        onChange={(e) => setCuisine(e.target.value)} 
-                        id="cuisine" className="form-control" 
-                        type="text"
-                    />
-                </div>
+            <Form.Input 
+                    fluid label="Cuisine" 
+                    onChange={(e) => setCuisine(e.target.value)} 
+                    value={cuisine}
+            />
 
-                <div className="form-group">
-                    <label htmlFor="address">Address</label>
-                    <input 
-                        value={address} 
-                        onChange={(e) => setAddress(e.target.value)} 
-                        id="address" 
-                        className="form-control" 
-                        type="text"
-                    />
-                </div>
+            <Form.Input 
+                fluid label="Address" 
+                onChange={(e) => setAddress(e.target.value)} 
+                value={address}
+            />
+            
+        </Form.Group>
+            <Form.Button onClick={handleSubmit} type="submit">Update</Form.Button>
+        </Form> 
 
-                <button type="submit" onClick={handleSubmit} class="ui button">Submit</button>
-
-            </form>
-        </div>
     )
 }
 

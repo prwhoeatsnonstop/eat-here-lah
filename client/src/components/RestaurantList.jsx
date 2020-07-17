@@ -2,7 +2,7 @@ import React, {useEffect, useContext} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory } from "react-router-dom";
-import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react';
 
 
 
@@ -53,7 +53,6 @@ const RestaurantList = (props) => {
                 <thead>
                     <tr className="bg-primary">
                         <th scope="col">Restaurant</th>
-                        <th scope="col">Location</th>
                         <th scope="col">Cuisine</th>
                         <th scope="col">Address</th>
                         <th scope="col">Edit</th>
@@ -65,7 +64,6 @@ const RestaurantList = (props) => {
                         return(
                                 <tr onClick={() => handleRestaurantSelect(restaurant.id)} key={restaurant.id}>
                                     <td>{restaurant.name}</td>
-                                    <td>{restaurant.location}</td>
                                     <td>{restaurant.cuisine}</td>
                                     <td>{restaurant.address}</td>
                                     <td>

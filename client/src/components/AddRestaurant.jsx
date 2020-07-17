@@ -5,18 +5,9 @@ import { RestaurantsContext } from "../context/RestaurantsContext"
 import { Form } from 'semantic-ui-react'
 
 
-const options = [
-    { key: 'c', text: 'Central', value: 'central' },
-    { key: 'n', text: 'North', value: 'north' },
-    { key: 's', text: 'South', value: 'south' },
-    { key: 'e', text: 'East', value: 'east' },
-    { key: 'w', text: 'West', value: 'west' },
-  ]
-
 const AddRestaurant = () => {
     const {addRestaurants} = useContext(RestaurantsContext)
     const [name, setName] = useState("")
-    const [location, setLocation] = useState("Location")
     const [cuisine, setCuisine] = useState("")
     const [address, setAddress] = useState("")
 
@@ -26,7 +17,6 @@ const AddRestaurant = () => {
         try {
             const response = await RestaurantFinder.post("/", {
                 name,
-                location,
                 cuisine,
                 address
             })
@@ -40,31 +30,25 @@ const AddRestaurant = () => {
     return (
         <Form>
             <Form.Group widths='equal'>
+
                 <Form.Input 
-                    fluid label="name" 
+                    fluid label="Name" 
                     placeholder="Restaurant name"
                     onChange={(e) => setName(e.target.value)} 
-                    type="text" 
                 />
 
-                <Form.Select
-                    fluid
-                    label='location'
-                    options={options}
-                    placeholder='Location'
-                />
                 <Form.Input 
-                        fluid label="cuisine" 
+                        fluid label="Cuisine" 
                         placeholder="Cuisine"
-                        onChange={(e) => setName(e.target.value)} 
-                        type="text" 
+                        onChange={(e) => setCuisine(e.target.value)} 
                 />
+
                 <Form.Input 
-                    fluid label="address" 
+                    fluid label="Address" 
                     placeholder="Address"
-                    onChange={(e) => setName(e.target.value)} 
-                    type="text" 
+                    onChange={(e) => setAddress(e.target.value)} 
                 />
+
             </Form.Group>
                 <Form.Button onClick={handleSubmit} type="submit">Add</Form.Button>
         </Form>

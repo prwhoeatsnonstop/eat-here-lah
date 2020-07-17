@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Button } from 'semantic-ui-react'
 import RestaurantFinder from "../apis/RestaurantFinder"
 import { useContext } from "react"
 import { RestaurantsContext } from "../context/RestaurantsContext"
@@ -68,7 +69,7 @@ const AddRestaurant = () => {
                         className="form-control" 
                         placeholder="Address"/>
                     </div>
-                    <button onClick={handleSubmit} type="submit" className="btn btn-primary">Add</button>
+                    <button onClick={handleSubmit} type="submit" class="ui button">Add</button>
                 </div>
             </form>
         </div>

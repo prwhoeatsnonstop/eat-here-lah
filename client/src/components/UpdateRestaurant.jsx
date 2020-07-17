@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { RestaurantsContext } from '../context/RestaurantsContext';
 import RestaurantFinder from '../apis/RestaurantFinder';
+import { Button } from 'semantic-ui-react'
 
 const UpdateRestaurant = (props) => {
     const { id } = useParams();
@@ -89,7 +90,7 @@ const UpdateRestaurant = (props) => {
                     />
                 </div>
 
-                <button type="submit" onClick={handleSubmit} className="btn btn-primary">Submit</button>
+                <button type="submit" onClick={handleSubmit} class="ui button">Submit</button>
 
             </form>
         </div>

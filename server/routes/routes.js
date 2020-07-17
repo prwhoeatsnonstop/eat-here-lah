@@ -39,7 +39,7 @@ routes.get("/api/v1/restaurants/:id", async (req, res) => {
     } catch (err) {
       console.log(err);
     }
-  });
+});
 
 // Create a restaurant
 routes.post("/api/v1/restaurants", async (req, res) => {

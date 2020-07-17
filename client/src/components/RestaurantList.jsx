@@ -2,6 +2,7 @@ import React, {useEffect, useContext} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory } from "react-router-dom";
+import { Button } from 'semantic-ui-react'
 
 
 
@@ -70,7 +71,7 @@ const RestaurantList = (props) => {
                                     <td>
                                         <button
                                             onClick={(e) => handleUpdate(e, restaurant.id)}
-                                            className="btn btn-warning"
+                                            class="ui button"
                                         >
                                             Update
                                         </button>
@@ -78,7 +79,7 @@ const RestaurantList = (props) => {
                                     <td>
                                         <button 
                                             onClick={(e) => handleDelete(e, restaurant.id)} 
-                                            className="btn btn-danger"
+                                            class="ui button"
                                         >
                                             Delete
                                         </button>

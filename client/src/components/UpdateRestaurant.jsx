@@ -35,7 +35,7 @@ const UpdateRestaurant = (props) => {
             cuisine,
             address
         });
-        history.push("/")
+        history.push("/restaurants")
     };
 
     return (

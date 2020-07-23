@@ -1,8 +1,16 @@
 import React, {useEffect, useContext} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
-import { useHistory } from "react-router-dom";
-import { Button } from 'semantic-ui-react';
+import { useHistory, Link } from "react-router-dom";
+
+import {   Button,
+    Container,
+    Dropdown,
+    Grid,
+    Header,
+    Icon,
+    Menu,
+    Message } from 'semantic-ui-react';
 
 
 
@@ -48,7 +56,9 @@ const RestaurantList = (props) => {
     }
 
     return (
+
         <div className="list-group">
+            {/* <Link to="/"><Button>Back To Home Page</Button></Link> */}
             <table className="table table-hover table-dark">
                 <thead>
                     <tr className="bg-primary">
@@ -87,7 +97,12 @@ const RestaurantList = (props) => {
                     })}
                 </tbody>
             </table>
+
         </div>
+
+        
+        
+
     )
 }
 

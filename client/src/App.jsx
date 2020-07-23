@@ -1,10 +1,11 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
+import Landing from "./routes/Landing";
 import Home from "./routes/Home";
 import UpdatePage from "./routes/UpdatePage";
 import RestaurantDetailPage from "./routes/RestaurantDetailPage";
 import { RestaurantsContextProvider } from "./context/RestaurantsContext";
-;
+
 const App = () => {
     return (
         <RestaurantsContextProvider>
@@ -13,6 +14,10 @@ const App = () => {
                     <Switch>
                         <Route 
                             exact path="/" 
+                            component={Landing}
+                        />
+                         <Route 
+                            exact path="/restaurants" 
                             component={Home}
                         />
                         <Route 

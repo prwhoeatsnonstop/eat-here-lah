@@ -1,0 +1,18 @@
+.landingpage {
+    background-color: #D3C2B4;
+    background-image: "../src/img/fiveguys.png";
+}
+
+.landing-page-container {
+    background-image: "../src/img/fiveguys.png";
+}
+
+.nav-btn {
+    box-shadow: 20px 20px 50px #00d2c6, 
+                -30px -30px 60px #00ffff;
+}
+
+.card {
+    display: inline-block;
+    margin-left: 20px;
+}

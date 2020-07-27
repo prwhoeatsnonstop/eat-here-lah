@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import RestaurantFinder from "../apis/RestaurantFinder"
 import { useContext } from "react"
 import { RestaurantsContext } from "../context/RestaurantsContext"
-import { Form } from 'semantic-ui-react'
+import { Form, Segment } from 'semantic-ui-react'
 
 
 const AddRestaurant = () => {
@@ -28,6 +28,9 @@ const AddRestaurant = () => {
     }
 
     return (
+        <div>
+        <Segment style={{backgroundColor: '#FFEBCD'}}>
+        <h2>Add More Restaurants To Your List!</h2>
         <Form>
             <Form.Group widths='equal'>
 
@@ -52,6 +55,8 @@ const AddRestaurant = () => {
             </Form.Group>
                 <Form.Button onClick={handleSubmit} type="submit">Add</Form.Button>
         </Form>
+        </Segment>
+        </div>
     )
 }
 

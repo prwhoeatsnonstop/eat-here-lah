@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <Menu secondary style={{backgroundColor: '#D3C2B4'}}>
-            <Link to="/">
+        <Menu secondary style={{backgroundColor: '#D3C2B4'}} class='ui sticky'>
+            <Link to="/restaurants">
                 <Menu.Item
                     name='Home'
                 />
             </Link>
 
-            <Link to="#">
+            <Link to="/">
                 <Menu.Item
                     name='About'
                 />

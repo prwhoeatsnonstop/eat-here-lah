@@ -7,6 +7,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import hawkerfood from '../img/hawkerfood.jpeg';
+import nightlife from '../img/nightlife.webp';
+import zomato from '../img/zomato.webp';
+import Footer from"../components/layout/Footer";
+
 import {
   Button,
   Card,
@@ -38,6 +42,8 @@ const HomepageHeading = ({ mobile }) => (
       inverted
       style={{
         color: 'black',
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        display: 'inline-block',
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
@@ -50,9 +56,12 @@ const HomepageHeading = ({ mobile }) => (
       inverted
       style={{
         color: 'black',
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        display: 'inline-block',
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
+        
       }}
     />
     <Link to="/restaurants"><Button size='huge'>Click Here to see list of Restaurants!<Icon name='right arrow'></Icon></Button></Link>
@@ -89,7 +98,7 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '3em 0em', backgroundColor: '#FF414D', backgroundImage:`url(${hawkerfood})`, backgroundSize: 'cover', opacity:'0.8'}}
+            style={{ minHeight: 700, padding: '3em 0em', backgroundColor: '#FF414D', backgroundImage:`url(${hawkerfood})`, backgroundSize: 'cover'}}
             vertical
           >
             {/* <Menu
@@ -230,12 +239,12 @@ const LandingPage = () => (
       <div className='card'>
       <Link to="/restaurants">
         <Card>
-          <Image src='https://b.zmtcdn.com/webFrontend/95f005332f5b9e71b9406828b63335331585809309.png' wrapped ui={false} width='800'/>
+          <Image src={zomato} wrapped ui={false} />
             <Card.Content>
               <Card.Header>Go out for a meal</Card.Header>
               <Card.Meta>Nom Nom</Card.Meta>
               <Card.Description>
-                Explore restaurants in Singapore near you!
+                Explore restaurants near you!
               </Card.Description>
             </Card.Content>
         </Card>
@@ -244,13 +253,13 @@ const LandingPage = () => (
 
       <div className='card'>
       <Link to="/restaurants">
-        <Card>
-          <Image src='https://b.zmtcdn.com/webFrontend/95f005332f5b9e71b9406828b63335331585809309.png' wrapped ui={false} width='800'/>
+        <Card >
+          <Image src={nightlife} wrapped ui={false} />
             <Card.Content>
-              <Card.Header>Go out for a meal</Card.Header>
-              <Card.Meta>Nom Nom</Card.Meta>
+              <Card.Header>Need a spot to chillax?</Card.Header>
+              <Card.Meta>Bars and music</Card.Meta>
               <Card.Description>
-                Explore restaurants in Singapore near you!
+                Locate the nearest bar!
               </Card.Description>
             </Card.Content>
         </Card>
@@ -292,67 +301,7 @@ const LandingPage = () => (
       </Container>
     </Segment>
 
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Company' />
-              <List link inverted>
-                <List.Item as='a'>About</List.Item>
-                <List.Item as='a'>Blog</List.Item>
-                <List.Item as='a'>Careers</List.Item>
-                <List.Item as='a'>Report Fraud</List.Item>
-                <List.Item as='a'>Contact Us</List.Item>
-              </List>
-            </Grid.Column>
-
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='For Foodies' />
-              <List link inverted>
-                <List.Item as='a'>Code of Conduct</List.Item>
-                <List.Item as='a'>Community</List.Item>
-                <List.Item as='a'>Blogger Help</List.Item>
-                <List.Item as='a'>Developers</List.Item>
-                <List.Item as='a'>Mobile Apps</List.Item>
-              </List>
-            </Grid.Column>
-
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='For Restaurants' />
-              <List link inverted>
-                <List.Item as='a'>Add Restaurant</List.Item>
-                <List.Item as='a'>Claim Your Listing</List.Item>
-                <List.Item as='a'>Business App</List.Item>
-                <List.Item as='a'>Restaurant Widgets</List.Item>
-                <List.Item as='a'>Product For Businesses</List.Item>
-              </List>
-            </Grid.Column>
-
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='For You' />
-              <List link inverted>
-                <List.Item as='a'>Privacy</List.Item>
-                <List.Item as='a'>Terms</List.Item>
-                <List.Item as='a'>Security</List.Item>
-                <List.Item as='a'>Sitemap</List.Item>
-              </List>
-            </Grid.Column>
-
-            {/* <Grid.Column width={7}>
-              <Header as='h4' inverted>
-                Footer Header
-              </Header>
-              <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
-              </p>
-            </Grid.Column> */}
-
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
+    <Footer />
   </ResponsiveContainer>
 )
 

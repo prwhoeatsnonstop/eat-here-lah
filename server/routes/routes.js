@@ -1,15 +1,6 @@
 const routes = require('express').Router();
 const db = require('../db/index');
 
-// Landing page
-// routes.get("/", (req, res) => {
-//     try {
-        
-//     } catch (err) {
-//         console.log(err);
-//     }
-// });
-
 // Get all restaurants
 routes.get("/api/v1/restaurants", async (req, res) => {
     try {

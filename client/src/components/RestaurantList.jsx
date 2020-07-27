@@ -2,16 +2,25 @@ import React, {useEffect, useContext} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory, Link } from "react-router-dom";
+import Footer from"../components/layout/Footer";
 
-import {   Button,
+
+import {
+    Button,
+    Card,
     Container,
-    Dropdown,
+    Divider,
     Grid,
     Header,
     Icon,
+    Image,
+    List,
     Menu,
-    Message } from 'semantic-ui-react';
-
+    Responsive,
+    Segment,
+    Sidebar,
+    Visibility,
+  } from 'semantic-ui-react'
 
 
 //passing an empty array will help to ensure useEffect will only run when component mounts and not everytime when a component reloads
@@ -57,48 +66,46 @@ const RestaurantList = (props) => {
 
     return (
 
-        <div className="list-group">
-            {/* <Link to="/"><Button>Back To Home Page</Button></Link> */}
-            <table className="table table-hover table-dark">
-                <thead>
-                    <tr className="bg-primary">
-                        <th scope="col">Restaurant</th>
-                        <th scope="col">Cuisine</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {restaurants && restaurants.map(restaurant => {
-                        return(
-                                <tr onClick={() => handleRestaurantSelect(restaurant.id)} key={restaurant.id}>
-                                    <td>{restaurant.name}</td>
-                                    <td>{restaurant.cuisine}</td>
-                                    <td>{restaurant.address}</td>
-                                    <td>
-                                        <button
-                                            onClick={(e) => handleUpdate(e, restaurant.id)}
-                                            class="ui button"
-                                        >
-                                            Update
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button 
-                                            onClick={(e) => handleDelete(e, restaurant.id)} 
-                                            class="ui button"
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+        <div class="RestaurantList">
 
+            <h1>Dine Out Restaurants in Singapore</h1>
+            
+            <div>
+            <div class="list-group">
+                {restaurants && restaurants.map(restaurant => {
+                    return (
+                        <div>
+                            <Card style={{marginBottom:'20px'}}>
+                            {/* <Image src={zomato} wrapped ui={false} /> */}
+                                <Card.Content>
+                                <Card.Header>Name: {restaurant.name}</Card.Header>
+                                <Card.Meta>Cuisine: {restaurant.cuisine}</Card.Meta>
+                                <Card.Description>
+                                    Address: {restaurant.address}
+                                </Card.Description>
+                                <button
+                                        onClick={(e) => handleUpdate(e, restaurant.id)}
+                                        class="ui button"
+                                    >
+                                        Update
+                                    </button>
+                                <button 
+                                        onClick={(e) => handleDelete(e, restaurant.id)} 
+                                        class="ui button"
+                                    >
+                                        Delete
+                                </button>
+                                </Card.Content>
+                            </Card>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
+        <h1></h1>
+        <h1></h1>
+        <h1></h1>
+    </div>
 
         
         

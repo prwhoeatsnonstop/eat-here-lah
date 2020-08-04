@@ -2,7 +2,9 @@ import React, {useEffect, useContext} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory, Link } from "react-router-dom";
+import RandomiseRestaurant from "../components/RandomiseRestaurant";
 import Footer from"../components/layout/Footer";
+// import UpdateForm from "../components/UpdateForm";
 
 import {
     Button,
@@ -21,17 +23,6 @@ import {
     Visibility,
   } from 'semantic-ui-react';
 
-
-function shuffleArray(array) {
-    let i = array.length - 1;
-    for (; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-}
 
 //passing an empty array will help to ensure useEffect will only run when component mounts and not everytime when a component reloads
 const RestaurantList = (props) => {
@@ -74,20 +65,6 @@ const handleRestaurantSelect = (id) => {
     history.push(`/restaurants/${id}`)
 }
 
-// START OF RANDOMISE RESTAURANT CHUNK
-
-const shuffledRestaurants = shuffleArray(restaurants);
-
-const randomRestaurant = 
-shuffledRestaurants.map((restaurant) => {
-    return (
-        <Link to={`/restaurants/${restaurant.id}`}><Button size='huge'>Click Here For A Random List of restaurant if you do not know where to go for a meal!<Icon name='right arrow'></Icon></Button></Link>
-    );
-});
-
-const randomise = randomRestaurant[0];
-// END OF RANDOMISE RESTAURANT CHUNK
-
 const cardStyle = {
     marginBottom:'20px' 
 }
@@ -129,7 +106,7 @@ const cardStyle = {
             </div>
                
             <div>
-                {randomise}
+                <RandomiseRestaurant />
             </div>
 
         </div>

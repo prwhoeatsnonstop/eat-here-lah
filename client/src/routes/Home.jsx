@@ -1,5 +1,5 @@
 import React from "react";
-import AddRestaurant from "../components/AddRestaurant";
+import AddForm from "../components/AddForm";
 import RestaurantList from "../components/RestaurantList";
 import Navbar from "../components/layout/Navbar";
 import Footer from"../components/layout/Footer";
@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div style={style}>
             <Navbar />
-            <AddRestaurant />
+            <AddForm />
             <RestaurantList />
             <Footer />
         </div>

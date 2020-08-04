@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { Link, useParams, useHistory } from 'react-router-dom'
 import { RestaurantsContext } from '../context/RestaurantsContext';
 import RestaurantFinder from '../apis/RestaurantFinder';
 import Navbar from "../components/layout/Navbar";
 import Footer from"../components/layout/Footer";
-import { Link } from "react-router-dom";
+
 import {
     Button,
     Card,

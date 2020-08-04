@@ -4,6 +4,9 @@ import { useContext } from "react"
 import { RestaurantsContext } from "../context/RestaurantsContext"
 import { Form, Segment } from 'semantic-ui-react'
 
+const style = {
+    backgroundColor: '#FFEBCD' 
+}
 
 const AddRestaurant = () => {
     const {addRestaurants} = useContext(RestaurantsContext)
@@ -29,7 +32,7 @@ const AddRestaurant = () => {
 
     return (
         <div>
-        <Segment style={{backgroundColor: '#FFEBCD'}}>
+        <Segment style={style}>
         <h2>Add More Restaurants To Your List!</h2>
         <Form>
             <Form.Group widths='equal'>
@@ -60,4 +63,6 @@ const AddRestaurant = () => {
     )
 }
 
-export default AddRestaurant
+export default AddRestaurant;
+
+

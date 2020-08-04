@@ -17,9 +17,14 @@ import {
     Visibility,
   } from 'semantic-ui-react'
 
+// position:'absolute', width: '100%', bottom:'0'
+const style= {
+  padding: '5em 0em'
+}
+
 const Footer = () => {
     return (
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
+    <Segment inverted vertical style={style}>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>

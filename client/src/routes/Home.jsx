@@ -5,9 +5,13 @@ import Navbar from "../components/layout/Navbar";
 import Footer from"../components/layout/Footer";
 
 
+const style = {
+    backgroundColor: "F9F8F7",
+}
+
 const Home = () => {
     return (
-        <div style={{backgroundColor: '#F9F8F7'}}>
+        <div style={style}>
             <Navbar />
             <AddRestaurant />
             <RestaurantList />

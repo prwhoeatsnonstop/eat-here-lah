@@ -11,7 +11,7 @@ import {   Button,
 const Header = () => {
     return (
         <div>
-            <div className="font-weight-light display-1 text-center">Restaurant Generator</div>
+            Restaurant Generator
         </div>
     )
 }

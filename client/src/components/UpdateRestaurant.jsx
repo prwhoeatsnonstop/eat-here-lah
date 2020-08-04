@@ -61,7 +61,7 @@ const UpdateRestaurant = (props) => {
 
         <div>
             < Navbar />
-            <h1 className="text-center">Update Restaurant</h1>
+            <h1>Update Restaurant</h1>
             <Form>
             <Form.Group widths='equal'>
 
@@ -90,6 +90,8 @@ const UpdateRestaurant = (props) => {
             <h1></h1>
 
             
+        <h1></h1>
+        <h1></h1>
         <h1></h1>
         <h1></h1>
         <h1></h1>

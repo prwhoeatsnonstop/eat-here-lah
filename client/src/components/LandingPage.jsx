@@ -1,8 +1,3 @@
-
-
-//LANDINGPAGE PREVIOUS ONE IS ABOVE
-
-
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -27,6 +22,24 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+
+const desktopContainerSegment = {
+  minHeight: 700, 
+  padding: '3em 0em', 
+  backgroundColor: '#FF414D', 
+  backgroundImage:`url(${hawkerfood})`, 
+  backgroundSize: 'cover'
+}
+
+const mobileContainerSegment = {
+  minHeight: 350, 
+  padding: '1em 0em', 
+  backgroundColor: '#FF414D'
+}
+
+const landingPageStyle = {
+  padding: '3em 0em'
+}
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'
@@ -61,7 +74,6 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
-        
       }}
     />
     <Link to="/restaurants"><Button size='huge'>Click Here to see list of Restaurants!<Icon name='right arrow'></Icon></Button></Link>
@@ -98,27 +110,9 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '3em 0em', backgroundColor: '#FF414D', backgroundImage:`url(${hawkerfood})`, backgroundSize: 'cover'}}
+            style={desktopContainerSegment}
             vertical
           >
-            {/* <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as='a'>
-                  
-                </Menu.Item>
-                <Menu.Item as='a'></Menu.Item>
-                <Menu.Item as='a'></Menu.Item>
-                <Menu.Item position='right'>
-                  
-                </Menu.Item>
-              </Container>
-            </Menu> */}
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -158,21 +152,13 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          {/* <Menu.Item as='a' active>
-            Home
-          </Menu.Item>
-          <Menu.Item as='a'>Work</Menu.Item>
-          <Menu.Item as='a'>Company</Menu.Item>
-          <Menu.Item as='a'>Careers</Menu.Item>
-          <Menu.Item as='a'>Log in</Menu.Item>
-          <Menu.Item as='a'>Sign Up</Menu.Item> */}
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 350, padding: '1em 0em', backgroundColor: '#FF414D' }}
+            style={mobileContainerSegment}
             vertical
           >
             <Container>
@@ -181,12 +167,6 @@ class MobileContainer extends Component {
                   <Icon name='sidebar' />
                 </Menu.Item>
                 <Menu.Item position='right'>
-                  {/* <Button as='a' inverted>
-                    Log in
-                  </Button>
-                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button> */}
                 </Menu.Item>
               </Menu>
             </Container>
@@ -217,92 +197,46 @@ ResponsiveContainer.propTypes = {
 
 const LandingPage = () => (
   <ResponsiveContainer>
-      {/* <Link to="/restaurants">
-       <Card>
-        <Image src='https://b.zmtcdn.com/webFrontend/95f005332f5b9e71b9406828b63335331585809309.png' wrapped ui={false} width='800'/>
-        <Card.Content>
-          <Card.Header>Go out for a meal</Card.Header>
-          <Card.Meta>Nom Nom</Card.Meta>
-          <Card.Description>
-            Explore restaurants in Singapore near you!
-          </Card.Description>
-        </Card.Content>
-        
-      </Card>
-      </Link> */}
-
-
-    <Segment style={{ padding: '3em 0em' }} vertical>
+  
+    <Segment style={landingPageStyle} vertical>
       <Container text>
 
-    
-      <div className='card'>
-      <Link to="/restaurants">
-        <Card>
-          <Image src={zomato} wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>Go out for a meal</Card.Header>
-              <Card.Meta>Nom Nom</Card.Meta>
-              <Card.Description>
-                Explore restaurants near you!
-              </Card.Description>
-            </Card.Content>
-        </Card>
-      </Link>
+      <div class='card'>
+        <Link to="/restaurants">
+          <Card>
+            <Image src={zomato} wrapped ui={false} />
+              <Card.Content>
+                <Card.Header>Go out for a meal</Card.Header>
+                <Card.Meta>Nom Nom</Card.Meta>
+                <Card.Description>
+                  Explore restaurants near you!
+                </Card.Description>
+              </Card.Content>
+          </Card>
+        </Link>
       </div>
 
       <div className='card'>
-      <Link to="/restaurants">
-        <Card >
-          <Image src={nightlife} wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>Need a spot to chillax?</Card.Header>
-              <Card.Meta>Bars and music</Card.Meta>
-              <Card.Description>
-                Locate the nearest bar!
-              </Card.Description>
-            </Card.Content>
-        </Card>
-      </Link>
+        <Link to="/restaurants">
+          <Card >
+            <Image src={nightlife} wrapped ui={false} />
+              <Card.Content>
+                <Card.Header>Need a spot to chillax?</Card.Header>
+                <Card.Meta>Bars and music</Card.Meta>
+                <Card.Description>
+                  Locate the nearest bar!
+                </Card.Description>
+              </Card.Content>
+          </Card>
+        </Link>
       </div>
-
-        {/* <Header as='h3' style={{ fontSize: '2em' }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Instead of focusing on content creation and hard work, we have learned how to master the
-          art of doing nothing by providing massive amounts of whitespace and generic content that
-          can seem massive, monolithic and worth your attention.
-        </p>
-        <Button as='a' size='large'>
-          Read More
-        </Button>
-
-        <Divider
-          as='h4'
-          className='header'
-          horizontal
-          style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-        >
-          <a href='#'>Case Studies</a>
-        </Divider>
-
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
-        </p>
-        <Button as='a' size='large'>
-          I'm Still Quite Interested
-        </Button> */}
       </Container>
+    <Footer />
+
     </Segment>
 
-    <Footer />
   </ResponsiveContainer>
+  
 )
 
 export default LandingPage

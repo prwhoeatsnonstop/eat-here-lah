@@ -27,6 +27,18 @@ import {
 } from "semantic-ui-react";
 import Navbar from "./layout/Navbar";
 
+const container = {
+  fontWeight: 'normal',
+  marginBottom: 0
+}
+
+const header = {
+  fontWeight: 'normal'
+}
+
+const backgroundColor = {
+  backgroundColor:"#9F8878"
+}
 
 const LandingPage = () => {
 
@@ -40,18 +52,13 @@ const LandingPage = () => {
           as='h1'
           content='Eat-Here-Lah'
           inverted
-          style={{
-            fontWeight: 'normal',
-            marginBottom: 0,
-          }}
+          style={container}
         />
         <Header
           as='h2'
           content='Discover where to eat based on your choices!'
           inverted
-          style={{
-            fontWeight: 'normal',
-          }}
+          style={header}
         />
         <Link to="/restaurants"><Button primary size='huge'>Click Here to see list of Restaurants!<Icon name='right arrow'></Icon></Button></Link>
 
@@ -60,9 +67,9 @@ const LandingPage = () => {
     {/* previous container style with margin */}
       {/* <Container style={{ margin: 20 }} > */}
 
-      <Container style={{ backgroundColor:"#9F8878" }}>
+      <Container style={backgroundColor}>
 
-        <Segment style={{ backgroundColor:"#9F8878" }} attached="top" >
+        <Segment style={backgroundColor} attached="top" >
           <Header as="h2" content="Nom Nom" />
           <p>
             Welcome to Eat-Here-Lah!
@@ -70,7 +77,7 @@ const LandingPage = () => {
           <Link to="/restaurants"><Button>Click Here to see list of Restaurants!</Button></Link>
 
         </Segment>
-        <Segment style={{ backgroundColor:"#9F8878" }} attached="bottom">
+        <Segment style={backgroundColor} attached="bottom">
           <ImageCarousel />
         </Segment>
 

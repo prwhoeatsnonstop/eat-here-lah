@@ -201,7 +201,7 @@ const LandingPage = () => (
     <Segment style={landingPageStyle} vertical>
       <Container text>
 
-      <div class='card'>
+      <div className='card'>
         <Link to="/restaurants">
           <Card>
             <Image src={zomato} wrapped ui={false} />

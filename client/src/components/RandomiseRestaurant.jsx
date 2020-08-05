@@ -1,4 +1,4 @@
-import React, {useEffect, useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory, Link } from "react-router-dom";
@@ -64,6 +64,8 @@ shuffledRestaurants.map((restaurant) => {
 const randomise = randomRestaurant[0];
 // END OF RANDOMISE RESTAURANT CHUNK
 
+
+
     return (
  
             <div>
@@ -73,4 +75,4 @@ const randomise = randomRestaurant[0];
     )
 }
 
-export default RandomiseRestaurant
+export default RandomiseRestaurant;

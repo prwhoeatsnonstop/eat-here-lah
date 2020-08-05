@@ -19,7 +19,10 @@ import {
 
 // position:'absolute', width: '100%', bottom:'0'
 const style= {
-  padding: '5em 0em'
+  padding: '5em 0em',
+  // position: 'absolute',
+  // bottom: 0,
+  // width: '100%'
 }
 
 const Footer = () => {

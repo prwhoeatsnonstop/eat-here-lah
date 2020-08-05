@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddRestaurant from "./AddRestaurant";
-
+import { Button} from 'semantic-ui-react';
 
 function WarningBanner(props) {
     if (!props.warn) {
@@ -31,7 +31,7 @@ function WarningBanner(props) {
       return (
         <div>
           <WarningBanner warn={this.state.showWarning} />
-          <button onClick={this.handleToggleClick}>
+          <button onClick={this.handleToggleClick} class="ui button">
             {this.state.showWarning ? 'Close Form' : 'Add Restaurants'}
           </button>
         </div>

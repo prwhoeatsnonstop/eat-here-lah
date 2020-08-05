@@ -1,10 +1,8 @@
-import React, {useEffect, useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory, Link } from "react-router-dom";
-import RandomiseRestaurant from "../components/RandomiseRestaurant";
-import Footer from"../components/layout/Footer";
-// import UpdateForm from "../components/UpdateForm";
+
 
 import {
     Button,
@@ -69,12 +67,17 @@ const cardStyle = {
     marginBottom:'20px' 
 }
 
+// const listStyle = {
+//     marginBottom: '50px',
+//     position: 'relative'
+// }
+
     return (
 
-        <div class="RestaurantList">
+        <div className="RestaurantList">
             <h1>Dine Out Restaurants in Singapore</h1>
         <div>
-            <div class="list-group">
+            <div className="list-group">
                 {restaurants && restaurants.map(restaurant => {
                     return (
                         <div>
@@ -86,6 +89,7 @@ const cardStyle = {
                                 <Card.Description>
                                     Address: {restaurant.address}
                                 </Card.Description>
+        
                                 <button
                                     onClick={(e) => handleUpdate(e, restaurant.id)}
                                     class="ui button"
@@ -103,10 +107,6 @@ const cardStyle = {
                         </div>
                     )
                 })}
-            </div>
-               
-            <div>
-                <RandomiseRestaurant />
             </div>
 
         </div>

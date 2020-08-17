@@ -5,23 +5,7 @@ import RestaurantFinder from '../apis/RestaurantFinder';
 import Navbar from "../components/layout/Navbar";
 import Footer from"../components/layout/Footer";
 
-import {
-    Button,
-    Card,
-    Container,
-    Divider,
-    Form,
-    Grid,
-    Header,
-    Icon,
-    Image,
-    List,
-    Menu,
-    Responsive,
-    Segment,
-    Sidebar,
-    Visibility,
-  } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 
 
 const UpdateRestaurant = (props) => {

@@ -4,22 +4,7 @@ import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory, Link } from "react-router-dom";
 
 
-import {
-    Button,
-    Card,
-    Container,
-    Divider,
-    Grid,
-    Header,
-    Icon,
-    Image,
-    List,
-    Menu,
-    Responsive,
-    Segment,
-    Sidebar,
-    Visibility,
-  } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 
 
 //passing an empty array will help to ensure useEffect will only run when component mounts and not everytime when a component reloads

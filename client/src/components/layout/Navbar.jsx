@@ -26,11 +26,11 @@ const Navbar = () => {
 
                 <Menu.Menu position='right'>
 
-            <Link to="#">
+            {/* <Link to="#">
                 <Menu.Item>
                     <Input icon='search' placeholder='Search...' />
                 </Menu.Item>
-            </Link>
+            </Link> */}
 
             <Link to="#">
                 <Menu.Item

@@ -1,4 +1,4 @@
-CREATE TABLE todos (
+CREATE TABLE restaurants (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     cuisine VARCHAR(50) NOT NULL,

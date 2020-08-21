@@ -1,5 +1,7 @@
 import React, { Component }from 'react';
 
+const key = `${process.env.REACT_APP_HAWKER_API_KEY}`;
+
 function shuffleArray(array) {
     let i = array.length - 1;
     for (; i > 0; i--) {
@@ -11,6 +13,7 @@ function shuffleArray(array) {
     return array;
 }
 
+
 class Background extends Component {
     constructor() {
         super();
@@ -19,16 +22,13 @@ class Background extends Component {
         };
     }
  
-// 'https://randomuser.me/api/'
-
-
 
     componentDidMount() {
         fetch("https://leejaew.p.rapidapi.com/hawker?name=**", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "leejaew.p.rapidapi.com",
-                "x-rapidapi-key": "4b43c4cb7amsh741ac26257228bcp18398ejsn131fd7479c9d"
+                "x-rapidapi-key": key
             }
         })
         .then(results => {

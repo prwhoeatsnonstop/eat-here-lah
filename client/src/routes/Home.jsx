@@ -5,7 +5,7 @@ import RestaurantList from "../components/RestaurantList";
 import RandomiseRestaurant from "../components/RandomiseRestaurant";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import SearchForm from "../components/SearchForm";
+//import SearchForm from "../components/SearchForm";
 
 
 const style = {
@@ -19,7 +19,6 @@ const Home = () => {
             <AddForm />
             <RestaurantList />
             <RandomiseRestaurant />
-            <SearchForm />
             <Footer />
         </div>
     )

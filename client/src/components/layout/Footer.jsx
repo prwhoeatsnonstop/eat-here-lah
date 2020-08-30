@@ -1,25 +1,19 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import {
-    Button,
-    Card,
     Container,
-    Divider,
     Grid,
     Header,
-    Icon,
-    Image,
     List,
-    Menu,
-    Responsive,
     Segment,
-    Sidebar,
-    Visibility,
   } from 'semantic-ui-react'
 
 // position:'absolute', width: '100%', bottom:'0'
 const style= {
   padding: '5em 0em',
+  position: 'absolute',
+  left:0,
+  //bottom:0,
+  right:0,
   // position: 'absolute',
   // bottom: 0,
   // width: '100%'

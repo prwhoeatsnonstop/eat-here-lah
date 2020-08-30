@@ -4,27 +4,19 @@ import { RestaurantsContext } from '../context/RestaurantsContext';
 import RestaurantFinder from '../apis/RestaurantFinder';
 import Navbar from "../components/layout/Navbar";
 import Footer from"../components/layout/Footer";
+import {Link } from "react-router-dom";
+import {
+    Menu
+  } from 'semantic-ui-react'
+
 
 import {
-    Button,
-    Card,
-    Container,
-    Divider,
-    Grid,
-    Header,
-    Icon,
-    Image,
-    List,
-    Menu,
-    Responsive,
-    Segment,
-    Sidebar,
-    Visibility,
+    Card
   } from 'semantic-ui-react'
 
 
 const style = {
-    marginBottm: "20px",
+    marginBottom: "370px",
 }
 
 const RestaurantDetailPage = () => {
@@ -57,7 +49,14 @@ const RestaurantDetailPage = () => {
                         </Card.Description>
                         </Card.Content>
                 </Card>
+
+                <Link to="/restaurants">
+                <Menu.Item
+                    name='Back to Main Page'
+                />
+            </Link>
             </div>
+           
                 {/* {selectedRestaurant && selectedRestaurant.name} */}
             <Footer />
         </div>

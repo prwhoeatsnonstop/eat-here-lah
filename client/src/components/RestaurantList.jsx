@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 
 import { Card } from 'semantic-ui-react';
